@@ -1,0 +1,15 @@
+@import "_spreadsheet-valo.scss";
+@import "_spreadsheet-legacy.scss";
+
+$v-color-keywords: non-valo-theme !default;
+
+@mixin spreadsheet {
+	
+	// Very nice workaround for missing variable-exists function
+	@if $v-color-keywords == non-valo-theme {
+	    @include spreadsheet-legacy;
+	} @else {
+		@include spreadsheet-valo;
+	} 
+	
+}

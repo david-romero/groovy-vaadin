@@ -1,0 +1,4 @@
+@import "../../../VAADIN/addons/spreadsheet/spreadsheet.scss";
+@mixin addons {
+	 @include spreadsheet;
+}
