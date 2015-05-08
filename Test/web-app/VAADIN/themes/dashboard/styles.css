@@ -7573,6 +7573,208 @@ div.v-layout.v-horizontal.v-widget {
 	margin: 0 -12px -12px;
 }
 
+.dashboard .v-tree {
+	position: relative;
+	white-space: nowrap;
+}
+
+.dashboard .v-tree:focus {
+	outline: none;
+}
+
+.dashboard .v-tree-node:before {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	z-index: 3;
+	width: 1.9em;
+	height: 28px;
+	cursor: pointer;
+	background: red;
+	opacity: 0;
+}
+
+.v-ie8 .dashboard .v-tree-node:before {
+	position: static;
+	margin-left: -1.9em;
+	vertical-align: top;
+	content: "\f0da";
+	font-family: FontAwesome;
+	text-align: center;
+	background: transparent;
+}
+
+.v-ie8 .dashboard .v-tree-node {
+	padding-left: 1.9em;
+}
+
+.dashboard .v-tree-node-caption {
+	height: 28px;
+	line-height: 27px;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.dashboard .v-tree-node-caption > div {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+.dashboard .v-tree-node-caption > div:before {
+	content: "\f0da";
+	font-family: FontAwesome;
+	display: inline-block;
+	width: 0.5em;
+	text-align: center;
+	margin: 0 0.6em 0 0.8em;
+	-webkit-transition: all 100ms;
+	-moz-transition: all 100ms;
+	transition: all 100ms;
+}
+
+.v-ie8 .dashboard .v-tree-node-caption > div:before {
+	display: none;
+}
+
+.dashboard .v-tree-node-caption span {
+	padding-right: 28px;
+	cursor: pointer;
+	display: inline-block;
+	width: 100%;
+}
+
+.v-ie .dashboard .v-tree-node-caption span {
+	width: auto;
+}
+
+.dashboard .v-tree-node-caption .v-icon {
+	padding-right: 0;
+	width: auto;
+	min-width: 1em;
+}
+
+.dashboard .v-tree-node-caption:after {
+	content: "";
+	display: block;
+	vertical-align: top;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	margin-top: -28px;
+	width: 100%;
+	height: 28px;
+	border-radius: 4px;
+	opacity: 0;
+	-webkit-transition: opacity 120ms;
+	-moz-transition: opacity 120ms;
+	transition: opacity 120ms;
+}
+
+.v-ie8 .dashboard .v-tree-node-caption:after {
+	content: none;
+}
+
+.v-ie8 .dashboard .v-tree-node-caption {
+	display: inline-block;
+}
+
+.dashboard .v-tree-node-expanded > .v-tree-node-caption > div:before {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.v-ie8 .dashboard .v-tree-node-expanded:before {
+	content: "\f0d7";
+	font-family: FontAwesome;
+}
+
+.dashboard .v-tree-node-leaf:before, .dashboard .v-tree-node-leaf > .v-tree-node-caption > div:before {
+	visibility: hidden;
+}
+
+.dashboard .v-tree-node-focused:after {
+	opacity: 1;
+	border: 1px solid #197de1;
+}
+
+.v-ie8 .dashboard .v-tree-node-focused {
+	outline: 1px dotted #197de1;
+}
+
+.dashboard .v-tree-node-selected {
+	color: #ecf2f8;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dashboard .v-tree-node-selected:after {
+	opacity: 1;
+	background-color: #197de1;
+	background-image: -webkit-linear-gradient(top, #1b87e3 2%, #166ed5 98%);
+	background-image: linear-gradient(to bottom,#1b87e3 2%, #166ed5 98%);
+	border: none;
+}
+
+.v-ie8 .dashboard .v-tree-node-selected {
+	background-color: #197de1;
+	background-image: -webkit-linear-gradient(top, #1b87e3 2%, #166ed5 98%);
+	background-image: linear-gradient(to bottom,#1b87e3 2%, #166ed5 98%);
+}
+
+.dashboard .v-tree-node-children {
+	padding-left: 19px;
+}
+
+.v-ie8 .dashboard .v-tree-node-children {
+	padding-left: 0;
+}
+
+.dashboard .v-tree-node-drag-top:before, .dashboard .v-tree-node-drag-bottom:after, .dashboard .v-tree-node-drag-bottom.v-tree-node-dragfolder.v-tree-node-expanded > .v-tree-node-children:before {
+	content: "\2022";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	background: #197de1;
+	font-size: 32px;
+	line-height: 2px;
+	color: #197de1;
+	text-indent: -4px;
+	text-shadow: 0 0 1px #fafafa, 0 0 1px #fafafa;
+	opacity: 1;
+	visibility: visible;
+}
+
+.dashboard .v-tree-node-drag-bottom.v-tree-node-dragfolder.v-tree-node-expanded:after {
+	content: none;
+}
+
+.dashboard .v-tree-node-caption-drag-center {
+	-webkit-box-shadow: 0 0 0 2px #197de1;
+	box-shadow: 0 0 0 2px #197de1;
+	position: relative;
+	border-radius: 4px;
+}
+
+.v-ie8 .dashboard .v-tree-node-caption-drag-center {
+	outline: 2px solid #197de1;
+}
+
+.v-ff .dashboard .v-tree-node-drag-top:before, .v-ff .dashboard .v-tree-node-drag-bottom:after {
+	line-height: 1px;
+}
+
+.v-ie8 .dashboard .v-tree-node-drag-top:before, .v-ie8 .dashboard .v-tree-node-drag-bottom:after {
+	line-height: 0;
+}
+
 .dashboard .v-table {
 	position: relative;
 	background: #fafafa;
@@ -8116,6 +8318,62 @@ div.v-layout.v-horizontal.v-widget {
 
 .dashboard .v-table-small.v-treetable .v-table-cell-wrapper {
 	min-height: 14px;
+}
+
+.dashboard .v-treetable [class*="caption-container"], .dashboard .v-treetable [class*="footer-container"], .dashboard .v-treetable [class*="cell-wrapper"] {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.dashboard .v-treetable [class*="caption-container"], .dashboard .v-treetable [class*="footer-container"] {
+	min-height: 14px;
+}
+
+.dashboard .v-treetable [class*="cell-wrapper"] {
+	min-height: 16px;
+}
+
+.dashboard .v-treetable [class*="caption-container"] {
+	padding-left: 12px;
+}
+
+.dashboard .v-treetable [class*="caption-container-align-right"] {
+	padding-left: 20px;
+}
+
+.dashboard .v-treetable [class*="footer-container"] {
+	padding-right: 12px;
+}
+
+.dashboard .v-treetable [class*="cell-content"] {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.dashboard .v-treetable [class*="cell-content"]:first-child {
+	padding-left: 13px;
+}
+
+.dashboard .v-treetable-treespacer {
+	display: inline-block;
+	position: absolute;
+	width: 19px !important;
+	margin-left: -25px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.dashboard .v-treetable-node-closed:before {
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.dashboard .v-treetable-node-open:before {
+	content: "\f0d7";
+	font-family: FontAwesome;
 }
 
 .dashboard .v-tabsheet:not(.v-has-width) {
@@ -12273,10 +12531,10 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 13px 25px;
 	background: white;
 	border-top: 1px solid #c5c5c5;
+	z-index: 99;
 	-webkit-transition: -webkit-transform 400ms 120ms;
 	-ms-transition: -ms-transform 400ms 120ms;
 	transition: transform 400ms 120ms;
-	z-index: 99;
 }
 
 .dashboard .schedule .tray.v-animate-reveal {
@@ -12427,7 +12685,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 50%;
 	width: 30px;
 	padding: 30px;
-	font-size: 40px;
+	font-size: 35px;
 	background: $warning;
 	position: fixed;
 	bottom: 20px;
@@ -12441,12 +12699,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .dashboard .reports .float-button > span > span {
 	position: absolute;
-	left: 0;
+	left: 0px;
 	top: 50%;
 	height: 100%;
 	width: 100%;
 	text-align: center;
-	margin-top: -30px;
+	margin-top: -26px;
 	color: $light;
 }
 
