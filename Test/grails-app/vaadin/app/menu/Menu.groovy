@@ -1,9 +1,14 @@
 package app.menu
 
 import app.calendar.CalendarView
+import app.criterios.CriteriosView
 import app.dashboard.DashBoardView
+import app.drag.DragView
+import app.listar.ListarView
+import app.perfil.PerfilView
 import app.reports.ReportView
 import app.spreadsheet.ExcelView
+import app.spreadsheet.SpreadSheet2View
 import app.spreadsheet.SpreadSheetView
 
 import com.google.common.eventbus.Subscribe
@@ -266,8 +271,13 @@ class Menu extends CustomComponent {
 			DASHBOARD ( "Dashboard",DashBoardView, com.vaadin.server.FontAwesome.HOME ,true ),
 			CALENDAR ( "Calendar" , CalendarView, com.vaadin.server.FontAwesome.CALENDAR_O , true ),
 			REPORTS ( "Reports" , ReportView , com.vaadin.server.FontAwesome.FILE_TEXT_O , true ),
+			LISTAR ( "Listar" , ListarView , com.vaadin.server.FontAwesome.FILE_TEXT_O , true ),
 			EXCEL ( "SpreadSheet" , ExcelView , com.vaadin.server.FontAwesome.FILE_EXCEL_O , true ),
-			EXCEL2 ( "SpreadSheet2" , SpreadSheetView , com.vaadin.server.FontAwesome.FILE_EXCEL_O , true )
+			EXCEL2 ( "SpreadSheet2" , SpreadSheetView , com.vaadin.server.FontAwesome.FILE_EXCEL_O , true ),
+			EXCEL3 ( "SpreadSheet3" , SpreadSheet2View , com.vaadin.server.FontAwesome.FILE_EXCEL_O , true ),
+			DRAG ( "Drag" , DragView , com.vaadin.server.FontAwesome.TIMES , true  ),
+			PERFIL ( "Perfil" , PerfilView , com.vaadin.server.FontAwesome.TIMES , true  ),
+			CRITERIOS ("Criterios", CriteriosView, com.vaadin.server.FontAwesome.TIMES, true )
 		
 			String viewName
 			Class<? extends View> viewClass

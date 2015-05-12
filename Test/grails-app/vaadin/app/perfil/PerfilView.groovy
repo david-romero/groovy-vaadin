@@ -218,6 +218,8 @@ class PerfilView extends CssLayout implements View,com.vaadin.server.Page.Browse
 					}else if ( browserAncho <= 1280 && browserAncho > 1024 && Page.getCurrent().getBrowserWindowHeight() <= 800 ){
 						style += "margin-top: 11.3%;margin-bottom: 11.3%;margin-left: 5.5%;"
 						style += "width: 65%;max-width: 65%;"
+					}else if ( browserAncho >= 1280  && Page.getCurrent().getBrowserWindowHeight() >= 900 ) {
+						style += "width: 63%;margin-top: 8.3%;margin-bottom: 8.3%;margin-left: 6.5%;"
 					}else if ( browserAncho >= 1024  && Page.getCurrent().getBrowserWindowHeight() >= 768 ) {
 						style += "width: 63%;margin-top: 14%;margin-bottom: 14%;margin-left: 6.5%;"
 					}else if ( browserAncho > 550 && browserAncho <= 760 && Page.getCurrent().getBrowserWindowHeight() <= 400 ) {

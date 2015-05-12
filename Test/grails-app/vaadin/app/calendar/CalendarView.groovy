@@ -24,6 +24,7 @@ import com.vaadin.grails.navigator.VaadinView
 import com.vaadin.navigator.View
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent
 import com.vaadin.server.ExternalResource
+import com.vaadin.server.FontAwesome
 import com.vaadin.server.Page
 import com.vaadin.server.Resource
 import com.vaadin.server.WebBrowser
@@ -94,8 +95,6 @@ class CalendarView extends CssLayout implements View{
 
 	@Override
 	void enter(ViewChangeEvent event) {
-		addComponent(new Label("Calendar"))
-
 		setSizeFull()
 		addStyleName("schedule")
 
@@ -105,8 +104,6 @@ class CalendarView extends CssLayout implements View{
 
 		tabs.addComponent(buildCalendarView())
 		tabs.addComponent(buildCatalogView())
-		tabs.addComponent(buildGridView())
-		tabs.addComponent(buildDragView())
 
 		addComponent(tabs)
 
@@ -205,10 +202,17 @@ class CalendarView extends CssLayout implements View{
 		initialView.add(java.util.Calendar.DAY_OF_WEEK,
 				-initialView.get(java.util.Calendar.DAY_OF_WEEK) + 1);
 		calendar.setStartDate(initialView.getTime());
-
+		
+		
+		
 		initialView.add(java.util.Calendar.DAY_OF_WEEK, 6);
 		calendar.setEndDate(initialView.getTime());
-
+		calendarLayout.addStyleName("reports");
+		Button boton = new Button(FontAwesome.PLUS)
+		boton.addStyleName("float-button")
+		boton.addStyleName("danger")
+		calendarLayout.addComponent(boton);
+		
 		return calendarLayout;
 	}
 
